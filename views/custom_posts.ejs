@@ -1,0 +1,29 @@
+<% if(post != null) {%>
+
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="/">Home</a></li>
+          <li class="breadcrumb-item active" aria-current="page"><%- post.name %> </li>
+        </ol>
+    </nav>
+
+
+    <div class="row">
+
+        <div class="col-12 col-md-4">
+            <img src="/img/<%- post.image %>" class="img-fluid sticky-top" style="top: 20px;" alt="<%- post.name %>" loading="lazy"> 
+        </div>
+
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12"><h1><%- post.name %></h1></div>
+                <div class="col-12 mb-4"><i class="bi bi-tag"></i> <%- post.category %></div>
+                <div class="col-12" style="white-space: pre-line;">
+                    <%- post.description %>
+                </div>
+             </div>
+        </div>
+    </div>
+<% } else { %>
+    <p>No Blog Found :(</p>
+<% } %> 

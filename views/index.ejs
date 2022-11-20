@@ -1,0 +1,248 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb-4">
+    <div class="col-12 col-lg-6">
+        <img src="/img/hero-image.avif" alt="Blog with Node.js" width="407" height="310" class="d-block mx-lg-auto img-fluid" loading="lazy">
+    </div>
+
+    <div class="col-12 col-lg-6">
+        <h1 class="display-5 fw-bold mb-3">Huge Collection of Blogs</h1>
+        <p class="lead">
+            “Blog” is an abbreviated version of “weblog,” which is a term used to describe websites that maintain an ongoing chronicle of information. A blog features diary-type commentary and links to articles on other websites.
+        </p>
+
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+            <a href="/explore-latest" class="btn btn-primary btn-dark btn-lg px-4 me-md-2">Read Latest</a>
+            <a href="/explore-random" class="btn btn-outline-secondary btn-lg px-4 me-md-2">Read Random</a>
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- Categories Start -->
+
+
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+
+    
+    <% if(categories != '') { %>
+        <% categories.forEach(function(category, index) { %>
+            <a href="/categories/<%- category.name %> " class="col-text-center category__link">
+                <div class="category__img shadow">
+                    <img src="img/<%- category.image %>" alt="<%- category.name %>" loading="lazy">
+                </div>
+                <div class="pt-1"><%- category.name %></div>
+            </a>
+        <% } ) %>
+    <% } %>   
+    
+    <a href="/categories" class="col-text-center category__link">
+        <div class="category__img shadow">
+            <img src="img/view-all.webp" alt="View all blogs" loading="lazy">
+        </div>
+        <div class="pt-1">View All</div>
+    </a>
+
+</div>
+<!-- Categories End -->
+
+
+
+<!-- Latest Start  -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Latest Blogs</h2>
+        <a href="/explore-latest" class="ms-auto">Read More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        
+        <% if(recent_post != '' ) { %>
+            <% recent_post.latest.forEach(function(post, index){ %>
+            <a href="/post/<%= post._id %> " class="col text-center category__link">
+                <div class="category__img category__img--large shadow">
+                    <img src="img/<%= post.image %> " alt="<%= post.name %> " loading="lazy">
+                </div>
+                <div class="pt-1"><%= post.name %> </div>
+            </a>
+        <% }) %>
+        <% } %>
+        
+    </div>
+
+</section>
+
+<!-- Latest End  -->
+
+
+
+<!-- FrontEnd Start  -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>FrontEnd Blogs</h2>
+        <a href="/categories/FrontEnd" class="ms-auto">Read More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        
+        <% if(recent_post != '' ) { %>
+            <% recent_post.frontend.forEach(function(post, index){ %>
+            <a href="/post/<%= post._id %> " class="col text-center category__link">
+                <div class="category__img category__img--large shadow">
+                    <img src="img/<%= post.image %> " alt="<%= post.name %> " loading="lazy">
+                </div>
+                <div class="pt-1"><%= post.name %> </div>
+            </a>
+        <% }) %>
+        <% } %>
+        
+    </div>
+
+</section>
+
+<!-- FrontEnd End  -->
+
+
+
+<!-- BackEnd Start  -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>BackEnd Blogs</h2>
+        <a href="/categories/BackEnd" class="ms-auto">Read More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        
+        <% if(recent_post != '' ) { %>
+            <% recent_post.backend.forEach(function(post, index){ %>
+            <a href="/post/<%= post._id %> " class="col text-center category__link">
+                <div class="category__img category__img--large shadow">
+                    <img src="img/<%= post.image %> " alt="<%= post.name %> " loading="lazy">
+                </div>
+                <div class="pt-1"><%= post.name %> </div>
+            </a>
+        <% }) %>
+        <% } %>
+        
+    </div>
+
+</section>
+
+<!-- BackEnd End  -->
+
+
+
+<!-- Languages Start  -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Languages Blogs</h2>
+        <a href="/categories/Languages" class="ms-auto">Read More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        
+        <% if(recent_post != '' ) { %>
+            <% recent_post.languages.forEach(function(post, index){ %>
+            <a href="/post/<%= post._id %> " class="col text-center category__link">
+                <div class="category__img category__img--large shadow">
+                    <img src="img/<%= post.image %> " alt="<%= post.name %> " loading="lazy">
+                </div>
+                <div class="pt-1"><%= post.name %> </div>
+            </a>
+        <% }) %>
+        <% } %>
+        
+    </div>
+
+</section>
+
+<!-- Languages End  -->
+
+
+
+
+<!-- DSA Start  -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>DSA Blogs</h2>
+        <a href="/categories/DSA" class="ms-auto">Read More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        
+        <% if(recent_post != '' ) { %>
+            <% recent_post.dsa.forEach(function(post, index){ %>
+            <a href="/post/<%= post._id %> " class="col text-center category__link">
+                <div class="category__img category__img--large shadow">
+                    <img src="img/<%= post.image %> " alt="<%= post.name %> " loading="lazy">
+                </div>
+                <div class="pt-1"><%= post.name %> </div>
+            </a>
+        <% }) %>
+        <% } %>
+        
+    </div>
+
+</section>
+
+<!-- DSA End  -->
+
+
+
+<!-- Interview Start  -->
+
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align-items-center">
+        <h2>Interview Experiences</h2>
+        <a href="/categories/Interview Experiences" class="ms-auto">Read More</a>
+    </div>
+
+    <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+        
+        <% if(recent_post != '' ) { %>
+            <% recent_post.interview.forEach(function(post, index){ %>
+            <a href="/post/<%= post._id %> " class="col text-center category__link">
+                <div class="category__img category__img--large shadow">
+                    <img src="img/<%= post.image %> " alt="<%= post.name %> " loading="lazy">
+                </div>
+                <div class="pt-1"><%= post.name %> </div>
+            </a>
+        <% }) %>
+        <% } %>
+        
+    </div>
+
+</section>
+
+<!-- Interview End  -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- Submit Start  -->
+<section class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4 img-fluid" src="/img/publishblog.webp" alt="Publish Blog Image" width="566" height="208" loading="lazy">
+    <h1 class="display-5 fw-bold">Publish your Blog for FREE</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Publish your Blog for free. You get a backlink to your blog.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/submit-blog" class="btn btn-primary btn-dark btn-lg">Post Blog</a>
+        </div>
+    </div>
+</section>
+
+<!-- Submit End  -->
