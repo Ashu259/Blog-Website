@@ -7,11 +7,16 @@ const flash = require('connect-flash');
 
 const app = express();
 
-require('dotenv').config();
+// require('dotenv').config();
 
 app.use(express.urlencoded( {extended: true} ));
 app.use(express.static('public'));
 app.use(expressLayouts);
+
+main().catch(err => console.log(err));
+async function main() {
+  await mongoose.connect("mongodb+srv://admin-ashu:pZBeBTT9FE7K2yu0@cluster0.ihw6yn6.mongodb.net/blogprojectDB");
+}
 
 app.use(cookieParser('BlogSecure'));
 app.use(session({
